@@ -287,7 +287,7 @@ dateNodes = new Array()
 $("#showlist").find("li").each(function() {
 	thistext = $(this).text()
         hreftext = $(this).find("a").attr("href")
-        hreftext[0] = ""
+        hreftext = hreftext.replace(".","")   
         hreftext = "http://jack-zh.github.com" + hreftext
 	datelist = thistext.split(":")[0]
 	titletext = thistext.split(":")[1]
@@ -354,7 +354,6 @@ $("#melist").find("li").each(function() {
         hreftext = $(this).find("a").attr("href")
         hreftext = hreftext.replace(".","")   
         hreftext = "http://jack-zh.github.com" + hreftext
-        alert(hreftext)
 	classification = $(this).find("a").attr("class")
 	author = $(this).find("a").attr("title")
 	datelist = thistext.split(":")[0]
