@@ -52,9 +52,9 @@ content = '''
     <title>''' 
 content += title
 content += '''</title>
-    <link rel="stylesheet" href="weakpoint/core/weakpoint.css">
-    <script src="weakpoint/third/jquery.js" type="text/javascript"></script>
-    <script src="weakpoint/third/jquery.bxSlider.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="/weakpoint/core/weakpoint.css">
+    <script src="/weakpoint/third/jquery.js" type="text/javascript"></script>
+    <script src="/weakpoint/third/jquery.bxSlider.min.js" type="text/javascript"></script>
     <script type="text/javascript">
   $(document).ready(function(){
     bxslide = $('#slider1').bxSlider({
@@ -147,8 +147,8 @@ content += '''<div class="meta">'''
 
 if gravatar_enable and email:
     import urllib, hashlib
-    gravatar_url = "weakpoint/img/ubuntu-gril.jpg"
-    content += '<img style="float:left;margin:15px;" class="avatar"src="' + gravatar_url +'" alt="avatar" width="180" height="140"/>'
+    gravatar_url = "/weakpoint/img/ubuntu-gril.jpg"
+    content += '<img style="float:left;margin:15px;" class="avatar"src="/' + gravatar_url +'" alt="avatar" width="180" height="140"/>'
 
 
 content += '''\n<table>\n<tbody>\n''' 
@@ -244,7 +244,7 @@ content += '''
 # ====================ribbon====================
 if ribbon_enable:
     content += '''
-    <a href="https://github.com/jack-zh"><img style="position: absolute; top: 0; right: 0; border: 0;" src="img/f.png" alt="Fork me on GitHub"></a>'''
+    <a href="https://github.com/jack-zh"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/img/f.png" alt="Fork me on GitHub"></a>'''
 
     
 # ==================html ends=====================
