@@ -1,0 +1,23 @@
+filename: yaml-cli.md
+theme: clean
+googlefonts: Eater
+google-analytics: UA-33272534-1
+disqus:
+
+
+meta:
+  title: YAML-CLI
+  subtitle: 基于yaml的自动化CLI
+  author: jack.zh
+  organization: 学无止境
+  gravatar: True
+  contact:
+    email: git.zhang@gmail.com
+    sinaweibo: 九月张郎
+    github: zhblog
+    
+slide:
+  navi: true
+  ribbon: true
+  latex: true
+  

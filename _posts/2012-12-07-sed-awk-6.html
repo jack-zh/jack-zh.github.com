@@ -1,0 +1,124 @@
+---
+layout: default
+title: sed-实战
+author: reserved
+thisdate: 2012-12-07
+classification: linux
+---
+<p id="fortitle"> {{ page.thisdate }} </p>
+<p>这个是在网上看到的一篇文章，原文在<a href="http://kodango.me/tag/sed-and-awk">这里</a>,保留下来顺便学习和帮助已有查阅</p>
+<p>相信大家肯定用过grep这个命令，它可以找出匹配某个正则表达式的行，例如查看包含"the word"的行：</p>
+<pre class="codepre"><code>
+$ grep "the word" filename</code></pre>
+<p>但是grep是针对单行作匹配的，所以如果一个短句跨越了两行就无法匹配。这就给我们出了一个题目，如何用sed模仿grep的行为，并且支持跨行短句的匹配呢？</p>
+<p>当单词仅出现在一行时很简单，用普通的正则就可以匹配，这里我们用到分支命令，当匹配时则跳转到最后：</p>
+<pre class="codepre"><code>
+/the word/b</code></pre>
+<p><span id="more-1104"></span>当单词跨越两行，容易想到用N命令将下一行读取到模式空间再做处理。例如我们同样要查找短句"the word"，现在的文本是这样的：</p>
+<pre class="codepre"><code>
+$ cat text
+we want to find the phrase the
+word, but it appears across two lines.</code></pre>
+<p>当用N玲读入下一行时，模式空间的内容如下所示：</p>
+<pre class="codepre"><code>
+Pattern space: we want to find the phrase the\nword, but it appears across two lines.</code></pre>
+<p>因此，需要将回车符号删除，然后再作匹配。</p>
+<pre class="codepre"><code>
+$!N
+s/ *\n/ /
+/the word/b</code></pre>
+<p>可是这里会有一个问题，如果短句恰好在读入的第二行的话，虽然匹配，但是会打印出模式空间中的所有内容，这样不符合grep的行为，只显示包含短句
+的那一行。所以这里要再加一个处理，将模式空间的第一行内容删除，再在第二行中匹配。但是在此之前，首先要保存模式空间的内容，否则可没有后悔药可吃。</p>
+<p>h命令可以将模式空间的内容保存到保持空间，然后利用替换命令将模式空间的第一行内容清除，然后再作匹配处理：</p>
+<pre class="codepre"><code>
+$!N
+h
+s/.*\n//
+/the word/b</code></pre>
+<p>如果不匹配，则短句可能确实是跨越两行，这时候我们首先用g命令将之前保存的内容从保持空间取回到模式空间，替换掉回车后再进行匹配：</p>
+<pre class="codepre"><code>
+g
+s/ *\n/ /
+/the word/b</code></pre>
+<p>这里如果匹配则直接跳转到最后，并且输出的内容是替换后的内容。</p>
+<p>但是我们要输出的是匹配的原文，而原文现在在保持空间还有一份拷贝，因此当匹配时，需要将原文从保持空间取回：</p>
+<pre class="codepre"><code>
+g
+s/ *\n/ /
+/the word/{
+g
+b
+}</code></pre>
+<p>同样地，我们要考虑不匹配的情况，不匹配的时候也要将会原文从保持空间取回，并且将模式空间的第一行删除，继续处理下一行：</p>
+<pre class="codepre"><code>
+g
+s/ *\n/ /
+/the word/{
+g
+b
+}
+g
+D</code></pre>
+<p>将所有的sed脚本合在一起，假设我们将以下内容保存到phrase.sed文件中：</p>
+<pre class="codepre"><code>
+/the word/b
+$!N
+h
+s/.*\n//
+/the word/b
+g
+s/ *\n//
+/the word/{
+g
+b
+}
+g
+D</code></pre>
+<p>接下来，我们用一段文本来测试下以上的脚本是否正确：</p>
+<pre class="codepre"><code>
+$ cat text
+We will use phrase.sed to print any line which contains
+the word. Or if the word appears across two lines, like
+below:
+
+It will print this line, because the
+word appears across two lines.
+
+You can run sed -f phrase.sed text to test this.</code></pre>
+<p>执行命令如下所示：</p>
+<pre class="codepre"><code>
+$ sed -f phrase.sed text
+the word. Or if the word appears across two lines, like
+It will print this line, because the
+word appears across two lines.</code></pre>
+<p>上面的命令中的"the word"其实可以是一个变量，这样我们就可以将这个功能写成一个脚本或者函数，用在更多地方：</p>
+<pre class="codepre"><code>
+$ cat phrase.sh 
+#! /bin/sh
+# phrase -- search for words across lines
+# $1 = search string; remaining args = filenames
+
+search=$1
+
+for file in ${@:2}; do
+    sed "/$search/b
+    \$!N
+    h
+    s/.*\n//
+    /$search/b
+    g
+    s/ *\n/ /
+    /$search/{
+    g
+    b
+    }
+    g
+    D" $file
+done
+
+$ chmod +x phrase.sh
+$ ./phrase.sh 'the word' text
+the word. Or if the word appears across two lines, like
+It will print this line, because the
+word appears across two lines.</code></pre>
+<p>这只是一个开头，或者你也可以在此基础上扩展更多的功能。sed的命令从单个看来并没是很复杂，但是要用得好就有点难度了，所以需要多多实践，多多思考，这一点跟正则表达式的学习是一样的。如果觉得没有现成的学习环境，<a href="http://kodango.me/sed1line-notes" title="sed1line 笔记">sed1line</a>是一个不错的开始。</p>

@@ -1,0 +1,108 @@
+---
+layout: default
+title: css背景图片 
+author: zzh 
+thisdate: 2012-09-09
+classification: web
+---
+<p id="fortitle"> {{ page.thisdate }} </p>
+
+
+<pre class="preclass">
+Google了一下，用css控制背景图片的大小等属性的方法，大家给的建议和方法总
+是感觉不给力，一般的做法为用css更换背景图片，而我的需求是同一张图片，
+引入不同的CSS控制其展现。（说明：由于我做了一个嵌入式小板子的web，
+空间有限，图片又是比较占空间的，又的做到在不同的分辨率终端上展现不同的效果，
+SO，最好就是只用一张图片，用少量的css去控制其大小。）
+在传统的背景图片的做法是用background-image:imgurl，
+这样是无法控制其大小的（也许是我还没找到方法），所以我的想法是用z-index属性去做背景
+</pre>
+<p>demo代码及注释如下：html</p>
+<pre class="brush:xml">
+pass 见下面链接
+</pre>
+
+<p>login1.css:</p>
+<pre class="brush:html">
+img {
+    position: absolute;
+    z-index: -1;
+    width: 800px;
+    height: 600px;
+    margin-right: 400px;
+    margin-left: -400px;
+    margin-top: 50px;
+}
+.formtable {
+    margin-top: 32px;
+    width: 800px;
+    height: 600px;
+}
+.supported {
+    color: #ffffff;
+    font-size: 20px;
+}
+.baifendiv {
+    height: 0%;
+}
+.usernameinput {
+    width: 80px;
+    height: 25px;
+    font-size: 17px;
+}
+.passwdinput {
+    width: 80px;
+    height: 25px;
+    font-size: 17px;
+}
+.screen {
+    width: 80px;
+    height: 25px;
+    font-size: 17px;
+}
+</pre>
+<p>login2.css:</p>
+
+<pre class="brush:css">
+table td { 
+    font-size: 10px;
+    font-family: "";
+}
+img { 
+    position: absolute;
+    z-index: -1; 
+    width: 500px;
+    height: 300px;
+    margin-right: 250px;
+    margin-left: -250px; 
+    margin-top: 50px;
+}
+.formtable {
+    margin-top: 30px;
+    width: 500px;
+    height: 300px;
+}
+.supported {
+    color: #ffffff;
+    font-size: 10px;
+}
+.baifendiv {
+    height: 10%;
+}
+.usernameinput {
+    width: 50px;
+    height: 17px;
+    font-size: 12px;
+}
+.passwdinput {
+    width: 50px;
+    height: 17px;
+    font-size: 12px;
+}
+.screen {
+    width: 50px;
+    height: 17px;
+    font-size: 12px;
+}
+</pre>
+<p>由于高亮代码有问题，这个的源码请见：<a href="http://blog.csdn.net/zzhjava2006/article/details/6292359">这里</a></p>
