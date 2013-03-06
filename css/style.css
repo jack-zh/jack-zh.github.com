@@ -11,7 +11,7 @@ a {
 body {
     margin: 20px 0px 0px 0px;
     padding: 0;
-    background: #191919 url(/blog/images/img07.jpg) no-repeat right top;
+    background: #191919 url(images/img07.jpg) no-repeat right top;
     font-family: Tahoma, Geneva, sans-serif;
     font-size: 13px;
     color: #424242;
@@ -191,7 +191,7 @@ hr {
     height: 28px;
     padding: 6px 0 0 7px;
     border: none;
-    background: url(/blog/images/img02.jpg) no-repeat left top;
+    background: url(images/img02.jpg) no-repeat left top;
     color: #000000;
 }
 
@@ -227,9 +227,9 @@ hr {
     width: 1058px;
     height: 100px;
     margin: 0 auto;
-    background: url(/blog/images/img2.png) no-repeat left top;
-    /*background: url(/blog/images/img.jpg) no-repeat left top;*/
-    /*background-image: url('/blog/images/header.png');*/
+    background: url(images/img2.png) no-repeat left top;
+    /*background: url(images/img.jpg) no-repeat left top;*/
+    /*background-image: url('images/header.png');*/
 }
 
 #logo a, #logo p {
@@ -268,7 +268,7 @@ hr {
     height: 44px;
     margin: 0px;
     padding: 36px 0px 0px 0px;
-    background: url(/blog/images/img11.jpg) repeat-x left bottom;
+    background: url(images/img11.jpg) repeat-x left bottom;
 }
 
 .post .title a {
@@ -335,7 +335,7 @@ hr {
 }
 
 #sidebar  li {
-    background: url(/blog/images/img09.jpg) repeat-y left top;
+    background: url(images/img09.jpg) repeat-y left top;
 }
 
 #sidebar  li ul {
@@ -354,13 +354,13 @@ hr {
 
 #sidebar  li li {
     border-bottom: 1px solid #E0E0E0;
-    background: url(/blog/images/img12.jpg) no-repeat left 13px;
+    background: url(images/img12.jpg) no-repeat left 13px;
 }
 
 #sidebar  li li {
     margin: -5px 10px -5px 15px;
     padding: 8px 0px 8px 10px;
-    background: url(/blog/images/img12.jpg) no-repeat left 13px;
+    background: url(images/img12.jpg) no-repeat left 13px;
 }
 
 #sidebar  li li a {
