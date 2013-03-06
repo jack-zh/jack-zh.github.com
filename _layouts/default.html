@@ -351,9 +351,12 @@ var menode = {
 }
 $("#melist").find("li").each(function() {
 	thistext = $(this).text()
-	hreftext = $(this).find("a").attr("href")
+        hreftext = $(this).find("a").attr("href")
+        alert(hreftext)
         hreftext[0] = ""
+        alert(hreftext)
         hreftext = "http://jack-zh.github.com" + hreftext
+        alert(hreftext)
 	classification = $(this).find("a").attr("class")
 	author = $(this).find("a").attr("title")
 	datelist = thistext.split(":")[0]
