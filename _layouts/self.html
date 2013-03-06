@@ -5,35 +5,35 @@
 <title>{{ page.title }}</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="css/style.css" rel="stylesheet" type="text/css"
+<link href="/css/style.css" rel="stylesheet" type="text/css"
 	media="screen" />
-<link href="css/jquery_lightbox.css" rel="stylesheet"
+<link href="/css/jquery_lightbox.css" rel="stylesheet"
 	type="text/css" media="screen" />
 
-<link href="css/alexgorbatchev/shCore.css" rel="stylesheet"
+<link href="/css/alexgorbatchev/shCore.css" rel="stylesheet"
 	type="text/css" />
-<link href="css/alexgorbatchev/shThemeDefault.css"
+<link href="/css/alexgorbatchev/shThemeDefault.css"
 	rel="stylesheet" type="text/css" />
-<link href="css/zTreeStyle/zTreeStyle.css" rel="stylesheet"
+<link href="/css/zTreeStyle/zTreeStyle.css" rel="stylesheet"
 	type="text/css" />
 
-<script type="text/javascript" src="js/alexgorbatchev/shCore.js"></script>
+<script type="text/javascript" src="/js/alexgorbatchev/shCore.js"></script>
 <script type="text/javascript"
-	src="js/alexgorbatchev/shBrushJScript.js"></script>
+	src="/js/alexgorbatchev/shBrushJScript.js"></script>
 <script type="text/javascript"
-	src="js/alexgorbatchev/shBrushCss.js"></script>
+	src="/js/alexgorbatchev/shBrushCss.js"></script>
 <script type="text/javascript"
-	src="js/alexgorbatchev/shBrushXml.js"></script>
+	src="/js/alexgorbatchev/shBrushXml.js"></script>
 <script type="text/javascript"
-	src="js/alexgorbatchev/shBrushPython.js"></script>
+	src="/js/alexgorbatchev/shBrushPython.js"></script>
 <script type="text/javascript"
-	src="js/alexgorbatchev/shBrushCpp.js"></script>
+	src="/js/alexgorbatchev/shBrushCpp.js"></script>
 <script type="text/javascript"
-	src="js/alexgorbatchev/shBrushBash.js"></script>
+	src="/js/alexgorbatchev/shBrushBash.js"></script>
 
-<script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
-<script type="text/javascript" src="js/jquery_lightbox.js"></script>
-<script type="text/javascript" src="js/jquery.ztree.core-3.4.js"></script>
+<script type="text/javascript" src="/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery_lightbox.js"></script>
+<script type="text/javascript" src="/js/jquery.ztree.core-3.4.js"></script>
 
 <style type="text/css">
 .imga {
@@ -104,20 +104,18 @@
 					<ul>
 						<li>
 							<div class="myzzh">
-								<img src="img/zzh.png"/>
+								<img src="/img/zzh.png"/>
 							</div>
 						</li>
 					</ul>
-
-				<ul>
+					
+					<ul>
 						<li>
 							<div class="myzzh">
 								<script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script> 
 							</div>
 						</li>
 					</ul>
-
-
 
 					<ul class="overflow">
 						<li>
@@ -201,7 +199,7 @@
 									<li><a target="_blank" href="http://www.linuxtoy.org/">LINUX
 											TOY</a></li>
 									<li><a target="_blank"
-										href="http://www.crazyshell.org">狂Shell</a></li>
+										href="http://www.crazyshell.org/blog/">狂Shell</a></li>
 									<li><a target="_blank" href="http://hellogcc.blogbus.com/">HelloGcc
 											Working Group</a></li>
 									<li><a target="_blank" href="http://denniskubes.com">Dennis
@@ -209,7 +207,7 @@
 									<li><a target="_blank" href="http://blog.zhaojie.me/">老赵点滴</a></li>
 									<li><a target="_blank" href="http://codingnow.com">云风的Blog</a></li>
 									<li><a target="_blank"
-										href="http://www.ruanyifeng.com">阮一峰的网络日志</a></li>
+										href="http://www.ruanyifeng.com/blog/">阮一峰的网络日志</a></li>
 									<li><a target="_blank" href="http://www.dutor.net/">Dutor</a></li>
 									<li><a target="_blank" href="http://clay.phpme.info/">what
 											th F* blog</a></li>
@@ -241,7 +239,7 @@
 	$(".addimg")
 			.each(
 					function() {
-						html = "<a class='aimg' href='jimg/"+this.id+"'><img class='imga' style='width:570px' src='jimg/"+this.id+"' ></img></a>"
+						html = "<a class='aimg' href='/jimg/"+this.id+"'><img class='imga' style='width:570px' src='/jimg/"+this.id+"' ></img></a>"
 						$(this).html(html)
 					});
 
@@ -288,7 +286,9 @@ dateNodes = new Array()
 
 $("#showlist").find("li").each(function() {
 	thistext = $(this).text()
-	hreftext = $(this).find("a").attr("href")
+        hreftext = $(this).find("a").attr("href")
+        hreftext = hreftext.replace(".","")   
+        hreftext = "http://jack-zh.github.com" + hreftext
 	datelist = thistext.split(":")[0]
 	titletext = thistext.split(":")[1]
 	daytext = datelist.split(" ")[0]
@@ -351,7 +351,9 @@ var menode = {
 }
 $("#melist").find("li").each(function() {
 	thistext = $(this).text()
-	hreftext = $(this).find("a").attr("href")
+        hreftext = $(this).find("a").attr("href")
+        hreftext = hreftext.replace(".","")   
+        hreftext = "http://jack-zh.github.com" + hreftext
 	classification = $(this).find("a").attr("class")
 	author = $(this).find("a").attr("title")
 	datelist = thistext.split(":")[0]
