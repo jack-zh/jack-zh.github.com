@@ -1,385 +1,399 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>{{ page.title }}</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="/css/style.css" rel="stylesheet" type="text/css"
-	media="screen" />
-<link href="/css/jquery_lightbox.css" rel="stylesheet"
-	type="text/css" media="screen" />
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>{{ page.title }}</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link href="/css/style.css" rel="stylesheet" type="text/css"
+        media="screen" />
+        <link href="/css/jquery_lightbox.css" rel="stylesheet"
+        type="text/css" media="screen" />
 
-<link href="/css/alexgorbatchev/shCore.css" rel="stylesheet"
-	type="text/css" />
-<link href="/css/alexgorbatchev/shThemeDefault.css"
-	rel="stylesheet" type="text/css" />
-<link href="/css/zTreeStyle/zTreeStyle.css" rel="stylesheet"
-	type="text/css" />
+        <link href="/css/alexgorbatchev/shCore.css" rel="stylesheet"
+        type="text/css" />
+        <link href="/css/alexgorbatchev/shThemeDefault.css"
+        rel="stylesheet" type="text/css" />
+        <link href="/css/zTreeStyle/zTreeStyle.css" rel="stylesheet"
+        type="text/css" />
 
-<script type="text/javascript" src="/js/alexgorbatchev/shCore.js"></script>
-<script type="text/javascript"
-	src="/js/alexgorbatchev/shBrushJScript.js"></script>
-<script type="text/javascript"
-	src="/js/alexgorbatchev/shBrushCss.js"></script>
-<script type="text/javascript"
-	src="/js/alexgorbatchev/shBrushXml.js"></script>
-<script type="text/javascript"
-	src="/js/alexgorbatchev/shBrushPython.js"></script>
-<script type="text/javascript"
-	src="/js/alexgorbatchev/shBrushCpp.js"></script>
-<script type="text/javascript"
-	src="/js/alexgorbatchev/shBrushBash.js"></script>
+        <script type="text/javascript" src="/js/alexgorbatchev/shCore.js"></script>
+        <script type="text/javascript"
+            src="/js/alexgorbatchev/shBrushJScript.js"></script>
+        <script type="text/javascript"
+            src="/js/alexgorbatchev/shBrushCss.js"></script>
+        <script type="text/javascript"
+            src="/js/alexgorbatchev/shBrushXml.js"></script>
+        <script type="text/javascript"
+            src="/js/alexgorbatchev/shBrushPython.js"></script>
+        <script type="text/javascript"
+            src="/js/alexgorbatchev/shBrushCpp.js"></script>
+        <script type="text/javascript"
+            src="/js/alexgorbatchev/shBrushBash.js"></script>
 
-<script type="text/javascript" src="/js/jquery-1.8.1.min.js"></script>
-<script type="text/javascript" src="/js/jquery_lightbox.js"></script>
-<script type="text/javascript" src="/js/jquery.ztree.core-3.4.js"></script>
+        <script type="text/javascript" src="/js/jquery-1.8.1.min.js"></script>
+        <script type="text/javascript" src="/js/jquery_lightbox.js"></script>
+        <script type="text/javascript" src="/js/jquery.ztree.core-3.4.js"></script>
 
-<style type="text/css">
-.imga {
-	border: 1px solid #12e3e3e;
-	border-width: 5px 5px 5px 5px;
-}
+        <style type="text/css">
+            .imga {
+                border: 1px solid #12e3e3e;
+                border-width: 5px 5px 5px 5px;
+            }
 
 
-.myzzh {;text-align:center;vertical-align:middle;border:1px solid #ccc}
-.myzzh img{ vertical-align:middle;}
-</style>
-<script type="text/javascript">
-	$(function() {
-		$('.aimg').lightBox();
-	});
+            .myzzh {;text-align:center;vertical-align:middle;border:1px solid #ccc}
+            .myzzh img{ vertical-align:middle;}
+        </style>
+        <script type="text/javascript">
+            $(function() {
+                    $('.aimg').lightBox();
+                    });
 
-	SyntaxHighlighter.config.clipboardSwf = 'http://alexgorbatchev.com/pub/sh/current/scripts/clipboard.swf';
-	SyntaxHighlighter.all();
+SyntaxHighlighter.config.clipboardSwf = 'http://alexgorbatchev.com/pub/sh/current/scripts/clipboard.swf';
+SyntaxHighlighter.all();
 </script>
 </head>
 <body>
-	<div style="cursor: pointer"
-		onclick="document.location='http://jack-zh.github.com';" id="logo">
-	</div>
-	<hr />
-	<!-- end #logo -->
-	<div id="page">
-		<div id="page-bgtop">
-			<div id="page-bgbtm">
-				<div id="content">
-					<div class="post">
-						<div class="post-bgtop">
-							<div class="post-bgbtm">
-								<h2 class="title">
-									<a id="titleid" href="#">{{ page.title }}</a>
-								</h2>
-								<p class="meta">
-									<a href="#">{{ page.author }}</a>
-								</p>
-								<div class="entry">
+    <div style="cursor: pointer"
+        onclick="document.location='http://jack-zh.github.com';" id="logo">
+    </div>
+    <hr />
+    <!-- end #logo -->
+    <div id="page">
+        <div id="page-bgtop">
+            <div id="page-bgbtm">
+                <div id="content">
+                    <div class="post">
+                        <div class="post-bgtop">
+                            <div class="post-bgbtm">
+                                <h2 class="title">
+                                    <a id="titleid" href="#">{{ page.title }}</a>
+                                </h2>
+                                <p class="meta">
+                                <a href="#">{{ page.author }}</a>
+                                </p>
+                                <div class="entry">
 
-									{{ content }}
+                                    {{ content }}
 
-									<div id="disqus_thread"></div>
-									<script type="text/javascript">
-										var disqus_shortname = 'zzhblog'; // 注意，短域名
-										/* * * 下面这些不需要改动 * * */
-										(function() {
-											var dsq = document
-													.createElement('script');
-											dsq.type = 'text/javascript';
-											dsq.async = true;
-											dsq.src = 'http://'
-													+ disqus_shortname
-													+ '.disqus.com/embed.js';
-											(document
-													.getElementsByTagName('head')[0] || document
-													.getElementsByTagName('body')[0])
-													.appendChild(dsq);
-										})();
-									</script>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div id="sidebar">
-					<ul>
-						<li>
-							<div class="myzzh">
-								<img src="/img/zzh.png"/>
-							</div>
-						</li>
-					</ul>
-					
-					<ul>
-						<li>
-							<div class="myzzh">
-								<script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script> 
-							</div>
-						</li>
-					</ul>
+                                    <div id="disqus_thread"></div>
+                                    <script type="text/javascript">
+                                        var disqus_shortname = 'zzhblog'; // 注意，短域名
+                                        /* * * 下面这些不需要改动 * * */
+                                        (function() {
+                                         var dsq = document
+                                         .createElement('script');
+                                         dsq.type = 'text/javascript';
+                                         dsq.async = true;
+                                         dsq.src = 'http://'
+                                         + disqus_shortname
+                                         + '.disqus.com/embed.js';
+                                         (document
+                                          .getElementsByTagName('head')[0] || document
+                                          .getElementsByTagName('body')[0])
+                                         .appendChild(dsq);
+                                         })();
+                                     </script>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <div id="sidebar">
+                     <ul>
+                         <li>
+                         <table border="1">
+                             <tr>
+                                 <td rowspan=3>
+                                     <div class="myzzh">
+                                         <img src="/img/zzh.png"/>
+                                     </div>
+                                 </td>
+                                 <td>link-pub</td>
+                             </tr>
+                             <tr>
+                                 <td>mycli</td>
+                             </tr>
+                             <tr>
+                                 <td>ymal_cli</td>
+                             </tr>
+                         </table>
 
-					<ul class="overflow">
-						<li>
-							<h2>最新文章</h2>
-							<div id="showlist">
-								<ul id="treeDemo" class="ztree overflows">
-									{% for post in site.posts %} {% if post.layout == "default" %}
-									<li>{{ post.date | date_to_long_string }} <a
-										title="{{ post.author }}" class="{{ post.classification }}"
-										href="{{ site.baseurl }}{{ post.url }}">:{{ post.title }}</a></li>
-									{% endif %} {% endfor %}
-								</ul>
-							</div>
-						</li>
-					</ul>
+                         </li>
+                     </ul>
 
-					<ul class="overflow">
-						<li>
-							<h2>分类列表</h2>
-							<div>
-								<ul id="treeClass" class="ztree overflows">
+                     <ul>
+                         <li>
+                         <div class="myzzh">
+                             <script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script> 
+                         </div>
+                         </li>
+                     </ul>
 
-								</ul>
-							</div>
-						</li>
-					</ul>
+                     <ul class="overflow">
+                         <li>
+                         <h2>最新文章</h2>
+                         <div id="showlist">
+                             <ul id="treeDemo" class="ztree overflows">
+                                 {% for post in site.posts %} {% if post.layout == "default" %}
+                                 <li>{{ post.date | date_to_long_string }} <a
+                                     title="{{ post.author }}" class="{{ post.classification }}"
+                                     href="{{ site.baseurl }}{{ post.url }}">:{{ post.title }}</a></li>
+                                 {% endif %} {% endfor %}
+                             </ul>
+                         </div>
+                         </li>
+                     </ul>
 
-					<ul class="overflow">
-						<li>
-							<h2>作者分类</h2>
-							<div>
-								<ul id="treeAuthor" class="ztree overflows">
+                     <ul class="overflow">
+                         <li>
+                         <h2>分类列表</h2>
+                         <div>
+                             <ul id="treeClass" class="ztree overflows">
 
-								</ul>
-							</div>
-						</li>
-					</ul>
+                             </ul>
+                         </div>
+                         </li>
+                     </ul>
 
-					<ul class="overflow">
-						<li>
-							<h2>ONLY FOR ME</h2>
-							<div id="melist">
-								<ul id="onlySelf" class="ztree overflows">
-									> {% for post in site.posts %} {% if post.layout == "self" %}
-									<li>{{ post.date | date_to_long_string }} <a
-										title="{{ post.author }}" class="{{ post.classification }}"
-										href="{{ site.baseurl }}{{ post.url }}">:{{ post.title }}</a></li>
-									{% endif %} {% endfor %}
-								</ul>
-							</div>
-						</li>
-					</ul>
+                     <ul class="overflow">
+                         <li>
+                         <h2>作者分类</h2>
+                         <div>
+                             <ul id="treeAuthor" class="ztree overflows">
 
-					<ul class="overflow">
-						<li>
-							<h2>我的PPT</h2>
-							<ul class="overflows">
-								{% for post in site.posts %} {% if post.layout == "point" %}
-								<li>{{ post.date | date_to_long_string }} <a
-									href="{{ site.baseurl }}{{ post.url }}">:{{ post.title }}</a></li>
-								{% endif %} {% endfor %}
-							</ul>
-						</li>
-					</ul>
+                             </ul>
+                         </div>
+                         </li>
+                     </ul>
 
+                     <ul class="overflow">
+                         <li>
+                         <h2>ONLY FOR ME</h2>
+                         <div id="melist">
+                             <ul id="onlySelf" class="ztree overflows">
+                                 > {% for post in site.posts %} {% if post.layout == "self" %}
+                                 <li>{{ post.date | date_to_long_string }} <a
+                                     title="{{ post.author }}" class="{{ post.classification }}"
+                                     href="{{ site.baseurl }}{{ post.url }}">:{{ post.title }}</a></li>
+                                 {% endif %} {% endfor %}
+                             </ul>
+                         </div>
+                         </li>
+                     </ul>
 
-					<div class="lianjie"  class="overflow">
-						<ul>
-							<li>
-								<h2>我的链接</h2>
-								<ul class="overflows">
-									<li><a target="_blank" href="http://blog.jobbole.com">伯乐在线</a></li>
-									<li><a target="_blank" href="http://coolshell.cn/">陈皓酷壳</a></li>
-									<li><a target="_blank" href="http://9.douban.com/">豆瓣九点</a></li>
-									<li><a target="_blank" href="http://www.mhtml5.com/">HTML5
-											研究小组</a></li>
-									<li><a target="_blank"
-										href="http://blog.sina.com.cn/yinwang0">当然我在扯淡</a></li>
-									<li><a target="_blank" href="http://www.csdn.net/">CSDN</a></li>
-									<li><a target="_blank" href="http://www.chinaunix.net/">CHINAUNIX</a></li>
-									<li><a target="_blank" href="http://www.linuxtoy.org/">LINUX
-											TOY</a></li>
-									<li><a target="_blank"
-										href="http://www.crazyshell.org/blog/">狂Shell</a></li>
-									<li><a target="_blank" href="http://hellogcc.blogbus.com/">HelloGcc
-											Working Group</a></li>
-									<li><a target="_blank" href="http://denniskubes.com">Dennis
-											Ku.bes</a></li>
-									<li><a target="_blank" href="http://blog.zhaojie.me/">老赵点滴</a></li>
-									<li><a target="_blank" href="http://codingnow.com">云风的Blog</a></li>
-									<li><a target="_blank"
-										href="http://www.ruanyifeng.com/blog/">阮一峰的网络日志</a></li>
-									<li><a target="_blank" href="http://www.dutor.net/">Dutor</a></li>
-									<li><a target="_blank" href="http://clay.phpme.info/">what
-											th F* blog</a></li>
-									<li><a target="_blank" href="http://tonybai.com/">Tony
-											Bai</a></li>
-									<li><a target="_blank" href="http://www.zhouwenyi.com/">周文艺</a></li>
-									<li><a target="_blank" href="http://www.qianduan.net/">前端观察</a></li>
-									<li><a target="_blank" href="http://www.itmianshi.net/">IT面试</a></li>
-									<li><a target="_blank" href="http://www.usr.cc/">USR技术社区</a></li>
-								</ul>
-					</div>
-					</li>
-				</div>
-				<!-- end #sidebar -->
-			</div>
-		</div>
-	</div>
+                     <ul class="overflow">
+                         <li>
+                         <h2>我的PPT</h2>
+                         <ul class="overflows">
+                             {% for post in site.posts %} {% if post.layout == "point" %}
+                             <li>{{ post.date | date_to_long_string }} <a
+                                 href="{{ site.baseurl }}{{ post.url }}">:{{ post.title }}</a></li>
+                             {% endif %} {% endfor %}
+                         </ul>
+                         </li>
+                     </ul>
 
 
-	<div id="footer">
-		<p>
-			Copyright (c) © 2012 GitHub Inc. All rights reserved. <a
-				href="http://blog.sina.com.cn/zzh250/">江湖</a>.
-		</p>
-	</div>
-	<!-- end #footer -->
-</body>
-<script type="text/javascript">
-	$(".addimg")
-			.each(
-					function() {
-						html = "<a class='aimg' href='/jimg/"+this.id+"'><img class='imga' style='width:570px' src='/jimg/"+this.id+"' ></img></a>"
-						$(this).html(html)
-					});
+                     <div class="lianjie"  class="overflow">
+                         <ul>
+                             <li>
+                             <h2>我的链接</h2>
+                             <ul class="overflows">
+                                 <li><a target="_blank" href="http://blog.jobbole.com">伯乐在线</a></li>
+                                 <li><a target="_blank" href="http://coolshell.cn/">陈皓酷壳</a></li>
+                                 <li><a target="_blank" href="http://9.douban.com/">豆瓣九点</a></li>
+                                 <li><a target="_blank" href="http://www.mhtml5.com/">HTML5
+                                     研究小组</a></li>
+                                 <li><a target="_blank"
+                                     href="http://blog.sina.com.cn/yinwang0">当然我在扯淡</a></li>
+                                 <li><a target="_blank" href="http://www.csdn.net/">CSDN</a></li>
+                                 <li><a target="_blank" href="http://www.chinaunix.net/">CHINAUNIX</a></li>
+                                 <li><a target="_blank" href="http://www.linuxtoy.org/">LINUX
+                                     TOY</a></li>
+                                 <li><a target="_blank"
+                                     href="http://www.crazyshell.org/blog/">狂Shell</a></li>
+                                 <li><a target="_blank" href="http://hellogcc.blogbus.com/">HelloGcc
+                                     Working Group</a></li>
+                                 <li><a target="_blank" href="http://denniskubes.com">Dennis
+                                     Ku.bes</a></li>
+                                 <li><a target="_blank" href="http://blog.zhaojie.me/">老赵点滴</a></li>
+                                 <li><a target="_blank" href="http://codingnow.com">云风的Blog</a></li>
+                                 <li><a target="_blank"
+                                     href="http://www.ruanyifeng.com/blog/">阮一峰的网络日志</a></li>
+                                 <li><a target="_blank" href="http://www.dutor.net/">Dutor</a></li>
+                                 <li><a target="_blank" href="http://clay.phpme.info/">what
+                                     th F* blog</a></li>
+                                 <li><a target="_blank" href="http://tonybai.com/">Tony
+                                     Bai</a></li>
+                                 <li><a target="_blank" href="http://www.zhouwenyi.com/">周文艺</a></li>
+                                 <li><a target="_blank" href="http://www.qianduan.net/">前端观察</a></li>
+                                 <li><a target="_blank" href="http://www.itmianshi.net/">IT面试</a></li>
+                                 <li><a target="_blank" href="http://www.usr.cc/">USR技术社区</a></li>
+                             </ul>
+                         </div>
+                         </li>
+                     </div>
+                     <!-- end #sidebar -->
+                 </div>
+             </div>
+         </div>
 
-	function whimg() {
-		imga = $(".imga")
-		if (imga) {
-			wt = (imga.width())
-			ht = (imga.height())
-			if (wt > 550) {
-				imga.width(550)
-			}
-		}
-	}
-	$("#fortitle").hide()
-	var ht = $(".meta").html()
-	$(".meta").html($("#fortitle").html() + ht)
-	$(window.parent.document).find("title").html($("title").html())
+
+         <div id="footer">
+             <p>
+             Copyright (c) © 2012 GitHub Inc. All rights reserved. <a
+                 href="http://blog.sina.com.cn/zzh250/">江湖</a>.
+             </p>
+         </div>
+         <!-- end #footer -->
+     </body>
+     <script type="text/javascript">
+         $(".addimg")
+         .each(
+                 function() {
+                 html = "<a class='aimg' href='/jimg/"+this.id+"'><img class='imga' style='width:570px' src='/jimg/"+this.id+"' ></img></a>"
+                 $(this).html(html)
+                 });
+
+function whimg() {
+    imga = $(".imga")
+        if (imga) {
+            wt = (imga.width())
+                ht = (imga.height())
+                if (wt > 550) {
+                    imga.width(550)
+                }
+        }
+}
+$("#fortitle").hide()
+var ht = $(".meta").html()
+$(".meta").html($("#fortitle").html() + ht)
+$(window.parent.document).find("title").html($("title").html())
 </script>
 <script>
-var setting = {};
+    var setting = {};
 
-var monthlist = new Array("January", "February", "March", "April", "May",
-		"June", "July", "August", "September", "October", "November",
-		"December")
+    var monthlist = new Array("January", "February", "March", "April", "May",
+    "June", "July", "August", "September", "October", "November",
+    "December")
 
 
-function youf(arr,val){
-	for(i=0;i<arr.length;i++){
-		if(arr[i]==val){
-			return true;
-		}
-	}
-	return false;
-}
+    function youf(arr,val){
+        for(i=0;i<arr.length;i++){
+            if(arr[i]==val){
+                return true;
+            }
+        }
+        return false;
+    }
 
-authors = new Array()
-authorNodes = new Array()
+    authors = new Array()
+    authorNodes = new Array()
 
-lives = new Array()
-liveNodes = new Array()
+    lives = new Array()
+    liveNodes = new Array()
 
-dates = new Array()
-dateNodes = new Array()
+    dates = new Array()
+    dateNodes = new Array()
 
-$("#showlist").find("li").each(function() {
-	thistext = $(this).text()
+    $("#showlist").find("li").each(function() {
+        thistext = $(this).text()
         hreftext = $(this).find("a").attr("href")
         hreftext = hreftext.replace(".","")   
         hreftext = "http://jack-zh.github.com" + hreftext
-	datelist = thistext.split(":")[0]
-	titletext = thistext.split(":")[1]
-	daytext = datelist.split(" ")[0]
-	monthtext = datelist.split(" ")[1]
-	//日期列表开始
-	yeartext = datelist.split(" ")[2]
-	if (!(youf(dates,yeartext))){
-		dates.push(yeartext)
-		dateNodes.push({open : false,name:yeartext,children:[{name:monthtext,open:true,children:[{name:daytext + ":" + titletext,url:hreftext}]}]})
-	}else{
-		for (i = 0; i<dates.length;i++){
-			if(yeartext == dateNodes[i].name){
-				flag = 1
-				for(j = 0; j<dateNodes[i].children.length; j++){
-					if (monthtext == dateNodes[i].children[j].name){
-						dateNodes[i].children[j].children.push({name:daytext + ":" + titletext,url:hreftext})
-						flag = 0
-						break
-					}
-				}
-				if(flag == 1){
-					dateNodes[i].children.push({name:monthtext,children:[{name:daytext + ":" + titletext,url:hreftext}]})
-				}
-			}
-		}
-	}
-	//日期列表结束
+        datelist = thistext.split(":")[0]
+        titletext = thistext.split(":")[1]
+        daytext = datelist.split(" ")[0]
+        monthtext = datelist.split(" ")[1]
+        //日期列表开始
+        yeartext = datelist.split(" ")[2]
+        if (!(youf(dates,yeartext))){
+            dates.push(yeartext)
+            dateNodes.push({open : false,name:yeartext,children:[{name:monthtext,open:true,children:[{name:daytext + ":" + titletext,url:hreftext}]}]})
+            }else{
+            for (i = 0; i<dates.length;i++){
+                if(yeartext == dateNodes[i].name){
+                    flag = 1
+                    for(j = 0; j<dateNodes[i].children.length; j++){
+                        if (monthtext == dateNodes[i].children[j].name){
+                            dateNodes[i].children[j].children.push({name:daytext + ":" + titletext,url:hreftext})
+                            flag = 0
+                            break
+                        }
+                    }
+                    if(flag == 1){
+                        dateNodes[i].children.push({name:monthtext,children:[{name:daytext + ":" + titletext,url:hreftext}]})
+                    }
+                }
+            }
+        }
+        //日期列表结束
 
-	//作者列表开始
-	author = $(this).find("a").attr("title")
-	if (!(youf(authors,author))){
-		authors.push(author)
-		authorNodes.push({open : false,name:author,children:[{name:datelist + ":" + titletext,url:hreftext}]})
-	}else{
-		for (i = 0; i<authors.length;i++){
-			if(author == authorNodes[i].name){
-				authorNodes[i].children.push({name:datelist + ":" + titletext,url:hreftext})
-			}
-		}
-	}
-	//作者列表结束
-	//分类列表开始
-	classification = $(this).find("a").attr("class")
-	if (!(youf(lives,classification))){
-		lives.push(classification)
-		liveNodes.push({open : false,name:classification,children:[{name:datelist + ":" + titletext,url:hreftext}]})
-	}else{
-		for (i = 0; i<lives.length;i++){
-			if(classification == liveNodes[i].name){
-				liveNodes[i].children.push({name:datelist + ":" + titletext,url:hreftext})
-			}
-		}
-	}
-	//分类列表结束
-});
+        //作者列表开始
+        author = $(this).find("a").attr("title")
+        if (!(youf(authors,author))){
+            authors.push(author)
+            authorNodes.push({open : false,name:author,children:[{name:datelist + ":" + titletext,url:hreftext}]})
+            }else{
+            for (i = 0; i<authors.length;i++){
+                if(author == authorNodes[i].name){
+                    authorNodes[i].children.push({name:datelist + ":" + titletext,url:hreftext})
+                }
+            }
+        }
+        //作者列表结束
+        //分类列表开始
+        classification = $(this).find("a").attr("class")
+        if (!(youf(lives,classification))){
+            lives.push(classification)
+            liveNodes.push({open : false,name:classification,children:[{name:datelist + ":" + titletext,url:hreftext}]})
+            }else{
+            for (i = 0; i<lives.length;i++){
+                if(classification == liveNodes[i].name){
+                    liveNodes[i].children.push({name:datelist + ":" + titletext,url:hreftext})
+                }
+            }
+        }
+        //分类列表结束
+    });
 
-var menode = {
-	open : false,
-	name : "SELF"
-}
-$("#melist").find("li").each(function() {
-	thistext = $(this).text()
+    var menode = {
+        open : false,
+        name : "SELF"
+    }
+    $("#melist").find("li").each(function() {
+        thistext = $(this).text()
         hreftext = $(this).find("a").attr("href")
         hreftext = hreftext.replace(".","")   
         hreftext = "http://jack-zh.github.com" + hreftext
-	classification = $(this).find("a").attr("class")
-	author = $(this).find("a").attr("title")
-	datelist = thistext.split(":")[0]
-	titletext = thistext.split(":")[1]
-	daytext = datelist.split(" ")[0]
-	monthtext = datelist.split(" ")[1]
-	yeartext = datelist.split(" ")[2]
-	arr = new Array(titletext, yeartext, monthtext, daytext, hreftext)
-	if ((menode["children"])) {
-		menode["children"][menode["children"].length] = {
-			name : datelist + ":" + titletext,
-			url : hreftext
-		}
-	} else {
-		menode["children"] = [ {
-			name : datelist + ":" + titletext,
-			url : hreftext
-		} ]
-	}
-});
-var selfNode = [ menode ]
-$(document).ready(function() {
-	$.fn.zTree.init($("#treeDemo"), setting, dateNodes);
-	$.fn.zTree.init($("#treeClass"), setting, liveNodes);
-	$.fn.zTree.init($("#treeAuthor"), setting, authorNodes);
-	$.fn.zTree.init($("#onlySelf"), setting, selfNode);
-});
+        classification = $(this).find("a").attr("class")
+        author = $(this).find("a").attr("title")
+        datelist = thistext.split(":")[0]
+        titletext = thistext.split(":")[1]
+        daytext = datelist.split(" ")[0]
+        monthtext = datelist.split(" ")[1]
+        yeartext = datelist.split(" ")[2]
+        arr = new Array(titletext, yeartext, monthtext, daytext, hreftext)
+        if ((menode["children"])) {
+            menode["children"][menode["children"].length] = {
+                name : datelist + ":" + titletext,
+                url : hreftext
+            }
+            } else {
+            menode["children"] = [ {
+                name : datelist + ":" + titletext,
+                url : hreftext
+            } ]
+        }
+    });
+    var selfNode = [ menode ]
+    $(document).ready(function() {
+        $.fn.zTree.init($("#treeDemo"), setting, dateNodes);
+        $.fn.zTree.init($("#treeClass"), setting, liveNodes);
+        $.fn.zTree.init($("#treeAuthor"), setting, authorNodes);
+        $.fn.zTree.init($("#onlySelf"), setting, selfNode);
+    });
 </script>
 </html>
