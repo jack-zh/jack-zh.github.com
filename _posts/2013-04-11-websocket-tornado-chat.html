@@ -124,32 +124,31 @@ if __name__ == '__main__':
 html部分
 </pre>
 <pre class="codepre"><code>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>chat demo</title>
-</head>
-    <script src="{{ static_url('jquery-1.9.1.js') }}"></script>
-    <script src="{{ static_url('chat.js') }}"></script>
-<script>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;chat demo&lt;/title&gt;
+&lt;/head&gt;
+    &lt;script src="{{ static_url('jquery-1.9.1.js') }}"&gt;&lt;/script&gt;
+    &lt;script src="{{ static_url('chat.js') }}"&gt;&lt;/script&gt;
+&lt;script&gt;
 function test(ts) {
 	$("#name_form").hide()
 	$("#msg_form").show()
 	websocket($("#name").val())
 	return false
 }
-</script>
-<body>
-    <p id="name_form">name:<input id="name"></input> <input type="button" onclick="test()" value="进入"></p>
-    <form style="display:none" id="msg_form" action="/socket" method="post">
-        <textarea id="text"></textarea>
-        <input type="submit" value="发言"/>
-    </form>
-    <div id="msg"></div>
+&lt;/script&gt;
+&lt;body&gt;
+    &lt;p id="name_form"&gt;name:&lt;input id="name"&gt;&lt;/input&gt; &lt;input type="button" onclick="test()" value="进入"&gt;&lt;/p&gt;
+    &lt;form style="display:none" id="msg_form" action="/socket" method="post"&gt;
+        &lt;textarea id="text"&gt;&lt;/textarea&gt;
+        &lt;input type="submit" value="发言"/&gt;
+    &lt;/form&gt;
+    &lt;div id="msg"&gt;&lt;/div&gt;
 
-</body>
-</html>
-
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 
 <pre class="preclass">
