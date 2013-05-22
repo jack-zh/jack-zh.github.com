@@ -1,0 +1,67 @@
+---
+layout: default
+title: Learn Linux C(2)-基本概念 
+author: zzh 
+thisdate: 2013-05-23
+classification: Learn-C-从头开始
+---
+<p id="fortitle"> {{ page.thisdate }} </p>
+
+<pre class="preclass">
+<strong>1：基本概念</strong>
+    @1：语句可以多个占一行，用";"分开，但是#include等指令是不行的，只能独立占一行
+    @2：C语言的注释 /*注释的内容*/，并且内容是可以换行的
+      方盒注释：
+        /*
+        * Name: pun.c
+        * Author:jack-zh
+        * Date:2013-05-23
+        * Porpuse:write a test
+        */
+      翼型注释：
+        main() /* this is a main function */
+    @3：变量（variable）,printf scanf
+    @4：宏定义表达式，名字默认最好为大写，涉及到运算符，用括号扩起来
+        #define SCALE_FACTOR (5 / 6)
+    @5：表示符-》字母 数字 下划线，字母下划线开始，大小写敏感
+    @6：关键字表（32个）：
+        auto ：声明自动变量
+        break：跳出当前循环
+        case：开关语句分支
+        char ：声明字符型变量或函数
+        const ：声明只读变量
+        continue：结束当前循环，开始下一轮循环
+        default：开关语句中的“其它”分支
+        do ：循环语句的循环体
+        double ：声明双精度变量或函数
+        else ：条件语句否定分支（与 if 连用）
+        enum ：声明枚举类型
+        extern：声明变量是在其它文件中声明
+        float：声明浮点型变量或函数
+        for：一种循环语句
+        goto：无条件跳转语句
+        if:条件语句
+        int： 声明整型变量或函数
+        long ：声明长整型变量或函数
+        register：声明寄存器变量
+        return ：子程序返回语句（可以带参数，也可不带参数）循环条件
+        short ：声明短整型变量或函数
+        signed：声明有符号类型变量或函数
+        sizeof：计算数据类型长度
+        static ：声明静态变量
+        struct：声明结构体变量或函数
+        switch :用于开关语句
+        typedef：用以给数据类型取别名
+        unsigned：声明无符号类型变量或函数
+        union：声明共用数据类型
+        void ：声明函数无返回值或无参数，声明无类型指针
+        volatile：说明变量在程序执行中可被隐含地改变
+        while ：循环语句的循环条件
+    @7：缩进规范，程序布局(略)
+    @8：花絮
+        C语言的简写，省略等习惯主要源于当初设计为了方面输入
+        main的return 0和exit(0)可以认为使等同的，exit(0)来自标准库 stdlib
+        标准C不支持//的注释（GCC貌似支持，clang也支持）
+        标识符长度的限制，标准C自己说没限制，但是有的编译器链接器只能记住31个字符或更少
+        
+</pre>
