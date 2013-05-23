@@ -9,5 +9,109 @@ classification: Learn-C-从头开始
 
 <pre class="preclass">
 <strong>printf</strong>
-    @1：something
+    @1：C语言不会检测格式串的匹配
+        printf("%d %d %f \n", i, j, x, y);
+        printf("%d %d %f %d\n", i, j, x);
+        这样不会报错，但是打印会不符合预期
+    @2：打印的格式%m.nX
+    @3：X代表
+        d格式：十进制
+        g格式：自动选f格式或e格式中较短的一种输出，且不输出无意义的零。
+        o格式：以无符号八进制形式输出整数。对长整型可以用"%lo"格式输出。同样也可以指定字段宽度用“%mo”格式输出
+        x格式：以无符号十六进制形式输出整数。对长整型可以用"%lx"格式输出。同样也可以指定字段宽度用"%mx"格式输出。
+        u格式：以无符号十进制形式输出整数。对长整型可以用"%lu"格式输出。同样也可以指定字段宽度用“%mu”格式输出。
+        c格式：输出一个字符。 
+        s格式：用来输出一个串。
+        f格式：用来输出实数（包括单、双精度），以小数形式输出。
+        e格式：以指数形式输出实数。
+        说明：
+            %A　　　　浮点数、十六进制数字和p-记法（Ｃ９９）
+            %c　　　　一个字符　
+            %d　　　　有符号十进制整数　
+            %e　　　　浮点数、e-记数法
+            %E　　　　浮点数、Ｅ-记数法
+            %f　　　　浮点数、十进制记数法　　
+            %g　　　　根据数值不同自动选择％f或％e．
+            %G　　　　根据数值不同自动选择％f或％e.
+            %i      有符号十进制数（与％d相同）
+            %o　　　　无符号八进制整数
+            %p　　　　指针　　　　
+            %s　　　　字符串
+            %u　　　　无符号十进制整数
+            %x　　　　使用十六进制数字０f的无符号十六进制整数　
+            %X　　　　使用十六进制数字０f的无符号十六进制整数
+            %%　　　　打印一个百分号
+</pre>
+<pre class="codepre">例子：
+int main()
+{
+    //for int
+    int i=30122121;
+    long i2=309095024l;
+    short i3=30;
+    unsigned i4=2123453;    printf("%d,%o,%x,%X,%ld,%hd,%u\n",i,i,i,i,i2,i3,i4);//如果是：%l,%h，则输不出结果
+    printf("%d,%ld\n",i,i2);//试验不出%ld和%d之间的差别，因为long是4bytes
+    printf("%hd,%hd\n\n\n",i,i3);//试验了%hd和%d之间的差别，因为short是2bytes
+    //for string and char
+    char ch1='d';
+    unsigned char ch2=160;
+    char *str="Hello everyone!";
+    printf("%c,%u,%s\n\n\n",ch1,ch2,str);//unsigned char超过128的没有字符对应
+        //for float and double,unsigned and signed can not be used with double and float
+    float fl=2.566545445F;//or 2.566545445f
+    double dl=265.5651445;
+    long double dl2=2.5654441454;
+    //%g没有e格式，默认6位包括小数点前面的数,
+    //%f没有e格式，默认6位仅只小数点后面包含6位
+    //%e采用e格式，默认6位为转化后的小数点后面的6位
+    printf("%f,%e,%g,%.7f\n",fl,dl,dl,dl);
+    printf("%f,%E,%G,%f\n",fl,dl,dl,dl);//%F is wrong
+    printf("%.8f,%.10e\n",fl,dl);
+    printf("%.8e,%.10f\n\n\n",fl,dl);
+
+    //for point
+    int *iP=&i;
+    char *iP1=new char;
+    void *iP2;//dangerous!
+    printf("%p,%p,%p\n\n\n",iP,iP1,iP2);
+   
+    //其他知识：负号，表示左对齐（默认是右对齐）；%6.3，6表示宽度，3表示精度
+    char *s="Hello world!";
+    printf(":%s: \n:%10s: \n:%.10s: \n:%-10s: \n:%.15s: \n:%-15s: \n:%15.10s: \n:%-15.10s:\n\n\n",
+        s,s,s,s,s,s,s,s);    double ddd=563.908556444;
+    printf(":%g: \n:%10g: \n:%.10g: \n:%-10g: \n:%.15g: \n:%-15g: \n:%15.10g: \n:%-15.10g:\n\n\n",
+        ddd,ddd,ddd,ddd,ddd,ddd,ddd,ddd);
+    //还有一个特殊的格式%*.* ,这两个星号的值分别由第二个和第三个参数的值指定    printf("%.*s \n", 8, "abcdefgggggg");
+    printf("%*.*f   \n", 3,3, 1.25456f);     return 0;
+} 
+</pre>
+<pre class="preclass">
+C语言的转义：
+    /a 响铃(BEL) 007
+    /b 退格(BS) 008
+    /f 换页(FF) 012
+    /n 换行(LF) 010
+    /r 回车(CR) 013
+    /t 水平制表(HT) 009
+    /v 垂直制表(VT) 011
+    // 反斜杠 092
+    /? 问号字符 063
+    /' 单引号字符 039
+    /" 双引号字符 034
+    /0 空字符(NULL) 000
+    /ddd 任意字符 三位八进制
+    /xhh 任意字符 二位十六进制 
+</pre>
+<h2>scanf</h2>
+<pre class="preclass">
+1：scanf也无法检查匹配
+2：去地址&的问题
+3：scanf本质是一种模式匹配
+</pre>
+<h2>花絮</h2>
+<pre class="preclass">
+1：i 与 d的区别
+    printf没区别 scanf可以匹配八进制 十六进制 十进制
+2：scanf会丢掉 d 23ll 只会匹配23
+3：scanf本质是一种模式匹配
 </pre>
