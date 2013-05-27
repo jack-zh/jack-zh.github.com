@@ -6,8 +6,50 @@ thisdate: 2013-05-27
 classification: Learn-C-从头开始
 ---
 <p id="fortitle"> {{ page.thisdate }} </p>
-
+<h2>***基本类型***</h2>
 <pre class="preclass">
-<strong>基本类型</strong>
-    @1：基本类型
+    @1：int类型
+        int的长度（32位的机子）
+            名称          全称类型说明符         缩写类型说明符    位数       范围
+            整型          int                 int             16位       -32768至+32767 
+            无符号整型     unsigned            int unsigned    16位       0 至 65,535 
+            短整型        short int           short           16位       -32768至+32767 
+            无符号短整型   unsigned short int  unsigned short  16位       0 至 65,535 
+            长整型        long int            long            32位       -2,147,483,648 至 2,147,483,647
+            无符号长整型   unsigned long int   unsigned long   32位       0至4,294,967,295 
+        标记无符号 32U 后缀U
+        标记Long类型 32L 后缀L
+    @2：float浮点型
+                类型          最小正值        最大值        精度  
+                float        1.17X10 -38    3.40*10 +38  6个数字            int             16位       -32768至+32767 
+                double       2.22X10 -308   1.79*10 +308 15个数字            int             16位       -32768至+32767 
+    @3：字符型
+        signed char; unsigned char;可移植性
+        /a 响铃(BEL) 007
+        /b 退格(BS) 008
+        /f 换页(FF) 012
+        /n 换行(LF) 010
+        /r 回车(CR) 013
+        /t 水平制表(HT) 009
+        /v 垂直制表(VT) 011
+        // 反斜杠 092
+        /? 问号字符 063
+        /' 单引号字符 039
+        /" 双引号字符 034
+        /0 空字符(NULL) 000
+        /ddd 任意字符 三位八进制
+        /xhh 任意字符 二位十六进制
+    @4：sizeof
+    @5：类型转换
+        直接转换：
+            float->double->long double
+            int->unsigned int->long int->unsigned int
+        强制类型转换：
+            i = (int) f;
+    @6：类型定义
+        #define BOOL int
+        typedef int Bool;
+        经常_t结尾 例如：size_t
+            
+        
 </pre>
