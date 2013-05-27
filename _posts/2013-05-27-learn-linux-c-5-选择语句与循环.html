@@ -9,6 +9,58 @@ classification: Learn-C-从头开始
 
 <pre class="preclass">
 <strong>选择语句</strong>
-    @1：something
-        something
+    @1：逻辑表达式
+        关系运算符 0 flase 1 true
+        float x = 2.1；
+        int i = 2;
+        x > i 为 1
+        && || 都会做短路运算
+    @2:if语句
+        悬空的else：
+            if()
+                if()
+                    some
+            else
+                some
+    @3:条件表达式
+        k = i > j ? i : j;
+    @4:避免的 == 与=不分
+    @5：switch（整型表达式（int or char））
+        switch(){
+        case 1: some;
+                some;
+                break;
+        default:some;
+                some;
+                break;
+        }
+    @6:缩进风格
+        K&R风格
+            if(1){
+                printf("he");
+            }
+        Allman风格
+            if(1)
+            {
+                printf("he");
+            }
+        Whitesmaths风格
+            if(1)
+                {
+                printf("he");
+                }
+        GUN风格
+            if(1)
+                {
+                    printf("he");
+                }
+    @7:do while与while
+    @8：for中的 i++ 与 ++i
+        break
+        continue
+        goto
+    @9:空语句
+        单独一行
+        for(;;)
+        ;
 </pre>
