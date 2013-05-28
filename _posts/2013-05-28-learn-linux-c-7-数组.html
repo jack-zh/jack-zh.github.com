@@ -15,7 +15,7 @@ classification: Learn-C-从头开始
             int a[10] = {1, 2, 3, 4};/*其余的值为0*/
             int a[10] = {0};/*其余的值为0 方便的初始化*/
         变化的数组长度
-            for (i = 0; i<sizeof(a) / sizeof(a[0]); i++)
+            for (i = 0; i &lt; sizeof(a) / sizeof(a[0]); i++)
                 ;
             or:
                 #define SIZE (sizeof(a) / sizeof(a[0]))
