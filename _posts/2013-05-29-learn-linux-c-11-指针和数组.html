@@ -8,5 +8,70 @@ classification: Learn-C-从头开始
 <p id="fortitle"> {{ page.thisdate }} </p>
 <h2>指针和数组</h2>
 <pre class="preclass">
-    @1：还没有写呢，亲
+    @1：指针的算术运算
+        只有指向相同数组的指针的比较才有意义
+    @2：指针用于数组处理
+        1:可以这样：
+            #define N 10
+            int a[N], sum, *p;
+            sum = 0;
+            for (p = &a[0]; p &lt; &a[N]; p++)
+                sum += *p;
+            /* 注意：可以直接写a[N],不会检查 */
+        2：一些操作：
+            *p++ or *(p++)
+            (*p)++
+            *++p or *(++p)
+            ++*p or ++(*p)
+        3：修改1：
+            #define N 10
+            int a[N], sum, *p;
+            sum = 0;
+            while (p &lt; &a[N])
+                sum += *p++;
+            /* 注意：可以直接写a[N],不会检查 */            
+        4：修改栈的实现
+            int *top_ptr = &contents[0];
+            
+            void push (int i){
+                if (is_full())
+                    stack_overflow();
+                else
+                    *top_ptr++ = i;
+            }
+            
+            int pop (int i){
+                if (is_empty())
+                    stack_overflow();
+                else
+                    return *--top_ptr;/*切记 -- d的位置*/
+            }
+        @3：用数组名作为指针
+            int a[10] = {1,2,3,4,5,6,7,8,9,0};
+            *a = 0;
+            *(a+2) = 45;/*a[2]*/
+            for(p = a; p&lt;a + N; p++)
+                ;
+            例子：数组反向
+            <pre class="codepre"><code>
+            #include &lt;stdio.h&lg;
+            
+            #define N 10
+            
+            int main(void) {
+                int a[N], *p;
+                printf("Enter %d numbers: \n", N);
+                for(p = a; p< a + N; p++)
+                    scanf("%d", p);
+                
+                printf("In reverse order: ");
+                for(p = a + N -1; p >= a; p--)
+                    printf("%d", *p);  
+                printf("\n");
+                
+                return 0;
+            }
+            </code></pre>
+        @4：数组型实际参数
+            
 </pre>
