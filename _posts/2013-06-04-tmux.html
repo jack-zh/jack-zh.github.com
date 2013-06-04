@@ -1,0 +1,63 @@
+---
+layout: default
+title: scrot介绍 
+author: zzh
+thisdate: 2013-06-04
+classification: linux
+---
+<p id="fortitle"> {{ page.thisdate }} </p>
+
+<pre class="preclass">
+    <a href="http://tmux.sourceforge.net/">Tmux</a>简介
+</pre>
+<h3>简介</h3>
+<pre class="preclass">
+对于 SA 来讲，tmux 可以称得上为神器。这是一个可以在终端里开启多窗口的工具，它由 OpenBSD 团队开发维护，是 OpenBSD 的基础系统软件之一，基于 BSD 许可证发布，可以称之为 GNU screen 的 BSD 替代版。除了 OpenBSD 外，它也可运行于 Linux 、Freebsd、AIX、Opensolaris 等 OS 之上。
+</pre>
+
+<h3>功能</h3>
+<pre class="preclass">
+    提供了强劲的、易于使用的命令行界面。
+    可横向和纵向分割窗口。
+    窗格可以自由移动和调整大小，或直接利用四个预设布局之一。
+    支持 UTF-8 编码及 256 色终端。
+    可在多个缓冲区进行复制和粘贴。
+    可通过交互式菜单来选择窗口、会话及客户端。
+    支持跨窗口搜索。
+    支持自动及手动锁定窗口
+</pre>
+
+<h3>安装</h3>
+<pre class="codepre"><code>
+    sudo apt-get install tmux</code>
+</pre>
+
+<h3>快捷键</h3></h3>
+<pre class="preclass">
+tmux 的使用主要就是依靠快捷键，通过 C-b 来调用。
+    C-b ?  // 显示快捷键帮助
+    C-b C-o  //调换窗口位置
+    C-b 空格键  //采用下一个内置布局
+    C-b ! // 把当前窗口变为新窗口
+    C-b  "  // 模向分隔窗口
+    C-b % // 纵向分隔窗口
+    C-b q // 显示分隔窗口的编号
+    C-b o // 跳到下一个分隔窗口
+    C-b 上下键 // 上一个及下一个分隔窗口
+    C-b C-方向键 //调整分隔窗口大小
+    C-b & // 确认后退出 tmux
+    C-b c // 创建新窗口
+    C-b 0~9 //选择几号窗口
+    C-b c // 创建新窗口
+    C-b n // 选择下一个窗口
+    C-b l // 最后使用的窗口
+    C-b p // 选择前一个窗口
+    C-b w // 以菜单方式显示及选择窗口
+    C-b s // 以菜单方式显示和选择会话
+    C-b t //显示时钟
+</pre>
+
+<h3>效果</h3>
+</br>
+<p class="addimg" id="tmux.png"></p>
+</br>
