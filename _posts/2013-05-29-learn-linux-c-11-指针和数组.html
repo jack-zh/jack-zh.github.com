@@ -54,7 +54,7 @@ classification: Learn-C-从头开始
                 ;
             例子：数组反向
             <pre class="codepre"><code>
-            #include &lt;stdio.h&lg;
+            #include &lt;stdio.h&gt;
             
             #define N 10
             
@@ -74,7 +74,7 @@ classification: Learn-C-从头开始
             </code></pre>
         @4：数组型实际参数例子，最大值最小值
              <pre class="codepre"><code>
-            #include &lt;stdio.h&lg;
+            #include &lt;stdio.h&gt;
             
             #define N 10
             
@@ -97,7 +97,7 @@ classification: Learn-C-从头开始
             	*max = a[0];
             	*min = a[0];
             	for (i = 0; i&lt; N; i++){
-            		if(a[i] &lg; *max)
+            		if(a[i] &gt; *max)
             		  *max = a[i];
             		if(a[i] &lt; *min)
             		  *min = a[i];
@@ -134,7 +134,7 @@ classification: Learn-C-从头开始
                     &a[i][0] = a[i]
             4：处理多位数组的行
                 int a[N][P], *p, i;
-                for(p=a[i]; p<= a[i] + P; p++)
+                for(p=a[i]; p &lt; = a[i] + P; p++)
                 {
                     *p = 0;
                 }
