@@ -72,6 +72,74 @@ classification: Learn-C-从头开始
                 return 0;
             }
             </code></pre>
-        @4：数组型实际参数
+        @4：数组型实际参数例子，最大值最小值
+             <pre class="codepre"><code>
+            #include &lt;stdio.h&lg;
             
+            #define N 10
+            
+            void max_min(int a[], int *max, int *min);
+            
+            int main(void) {
+            	int a[10];
+            	int max, min;
+            	int i;
+            	printf("Enter 10 num:\n");
+            	for (i = 0;i&lt;N;i++)
+            	  scanf("%d", &a[i]);
+            	max_min(a, &max, &min);
+            	printf("max:%d  min:%d", max, min);
+            	return 0;
+            }
+            
+            void max_min(int a[], int *max, int *min){
+            	int i = 0;
+            	*max = a[0];
+            	*min = a[0];
+            	for (i = 0; i&lt; N; i++){
+            		if(a[i] &lg; *max)
+            		  *max = a[i];
+            		if(a[i] &lt; *min)
+            		  *min = a[i];
+            	}
+            }
+            
+            </code></pre>
+        @5：指针作为返回值
+            int *p, x, y;
+            p = max(&x, &y);
+            int *max(int *x, int *y){
+                if(*x > *y)
+                    rerurn a;
+                return b;
+            }
+            /* 永远不要返回指向自动局部变量的指针 */
+        @5：指针和多维数组
+            1：世界上本没有多维数组
+            2：把多位数组当成一维数组
+                int a[N][P], *p;
+                for(p = &a[0][0]; p<= &a[N-1][P-1]; i++)
+                {
+                    *p = 0;
+                }
+            3：处理多维数组的行
+                p = &a[i][0]
+                or
+                p = a[i]
+                推算：
+                    a[i] = *(a + i)
+                    &a[i][0] = a[i] + 0
+                    &a[i][0] = &(*(a[i] + 0))
+                    &(*(a[i] + 0)) = a[i]
+                    &a[i][0] = a[i]
+            4：处理多位数组的行
+                int a[N][P], *p, i;
+                for(p=a[i]; p<= a[i] + P; p++)
+                {
+                    *p = 0;
+                }
+            5：用多为数组名作为指针
+                二位数组需要的是指向指针的指针
+                b[i][j]的b是一个指向b[0]的指针不是指向b[0][0]的指针
+                b是一个指向指针的指针       
 </pre>
