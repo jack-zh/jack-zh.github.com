@@ -91,11 +91,130 @@ classification: Learn-C-从头开始
         }
         </code></pre>
     @5：字符串标准库
-        pass
+        1:几种错误
+            char str1[10]; str1="abc";
+            char str2[10]="qwe"; str1 = str2;/* 指针赋值 */
+        2：char *strcpy(char *s1, const char *s2)
+            返回s1
+        3：char *strcat(char *s1, const char *s2)
+            返回s1
+        4：int strcmp(char *s1, const char *s2)
+            返回s1
+        5：size_t strlen(const char *s1)
+        
+        6:一个程序练习
+        <pre class="codepre"><code>
+        #include &lt;stdio.h&gt;
+        #include  &lt;string.h&gt;
+        
+        #define MAX_REMIND 50   /* maximum number of reminders */
+        #define MSG_LEN 60      /* max length of reminder message */
+        
+        int read_line(char str[], int n);
+        
+        int main(void)
+        {
+          char reminders[MAX_REMIND][MSG_LEN+3];
+          char day_str[3], msg_str[MSG_LEN+1];
+          int day, i, j, num_remind = 0;
+        
+          for (;;) {
+            if (num_remind == MAX_REMIND) {
+              printf("-- No space left --\n");
+              break;
+            }
+        
+            printf("Enter day and reminder: ");
+            scanf("%2d", &day);
+            if (day == 0)
+              break;
+            sprintf(day_str, "%2d", day);
+            read_line(msg_str, MSG_LEN);
+        
+            for (i = 0; i &lt; num_remind; i++)
+              if (strcmp(day_str, reminders[i]) < 0)
+                break;
+            for (j = num_remind; j &gt; i; j--)
+              strcpy(reminders[j], reminders[j-1]);
+        
+            strcpy(reminders[i], day_str);
+            strcat(reminders[i], msg_str);
+        
+            num_remind++;
+          }
+        
+          printf("\nDay Reminder\n");
+          for (i = 0; i &lt; num_remind; i++)
+            printf(" %s\n", reminders[i]);
+        
+          return 0;
+        }
+        
+        int read_line(char str[], int n)
+        {
+          int ch, i = 0;
+        
+          while ((ch = getchar()) != '\n')
+            if (i < n)
+              str[i++] = ch;
+          str[i] = '\0';
+          return i;
+        }  
+        </code></pre>        
     @6：字符串惯用法
-        pass
+        strlen的精简版本和快速版本
+        1：
+        size_t strlen(const char *s)
+        {
+        	size_t n = 0;
+        	while (*s++)
+        	  n++;
+        	return n;
+        }
+        2：
+        size_t strlen(const char *s)
+        {
+        	const char *p = s;
+        	while (*s)
+        	  s++;
+        	return s-p;
+        }
+        3：strcat
+        char *strcat(char *s1, const char *s2)
+        {
+        	while(*s1)
+        	  s1++;
+        	while(*s1++ = *s2++)
+        	  ;
+        	return s1;
+        }
     @7：字符串数组
-        pass
+        just 来个例子：
+        #include &lt;stdio.h&gt;
+        #include &lt;string.h&gt;
+        
+        #define NUM_PLANETS 9
+        
+        int main(int argc, char *argv[])
+        {
+          char *planets[] = {"Mercury", "Venus", "Earth",
+                             "Mars", "Jupiter", "Saturn",
+                             "Uranus", "Neptune", "Pluto"};
+          int i, j;
+        
+          for (i = 1; i < argc; i++) {
+            for (j = 0; j < NUM_PLANETS; j++)
+              if (strcmp(argv[i], planets[j]) == 0) {
+                printf("%s is planet %d\n", argv[i], j + 1);
+                break;
+              }
+            if (j == NUM_PLANETS)
+              printf("%s is not a planet\n", argv[i]);
+          }
+        
+          return 0;
+        }
+        
     @8：问与答
-        pass
+        1:字符串长度的支持  至少509
 </pre>
