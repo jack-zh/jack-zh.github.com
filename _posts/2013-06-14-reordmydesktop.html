@@ -1,0 +1,36 @@
+---
+layout: default
+title: recordMyDesktop介绍 
+author: zzh
+thisdate: 2013-06-14
+classification: linux
+---
+<p id="fortitle"> {{ page.thisdate }} </p>
+
+<h3>recordMyDesktop简介</h3>
+ 
+<pre class="preclass">
+屏幕录制软件recordMyDesktop介绍，很好用的说
+</pre>
+
+<h3>功能</h3>
+<pre class="preclass">
+    可将你当前的 Linux 桌面录制成视频与他人分享。其功能主要有：可录制全屏、窗口，也可以录制选择的区域；除了能够录制视频的基本功能之外，还能够录制音频；有一些录制的参数可以调整；生成的视频格式为 ogv。如果需求不是很大的话，那么不妨试一试这个小工具。
+</pre>
+
+<h3>安装</h3>
+<pre class="codepre"><code>
+    sudo apt-get install mencoder recordmydesktop gtk-recordmydesktop</code>
+</pre>
+
+<h3>另外</h3></h3>
+<pre class="preclass">
+    生成的ogv不是很通用，可以mencoder转一下
+    mencoder out.ogv -ovc xvid -xvidencopts bitrate=1000:pass=1 -o xvid.avi
+    mencoder out.ogv -ovc xvid -xvidencopts bitrate=1000:pass=2 -o xvid.avi    
+</pre>
+
+<h3>效果</h3>
+</br>
+<p class="addimg" id="recordmydesktop.png"></p>
+</br>
