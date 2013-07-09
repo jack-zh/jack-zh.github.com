@@ -1,0 +1,54 @@
+---
+layout: default
+title: 嵌入式Linux开发概述 
+author: zzh
+thisdate: 2013-07-09
+classification: 嵌入式Linux开发
+---
+
+<p id="fortitle"> {{ page.thisdate }} </p>
+<pre class="preclass">
+<strong>一：嵌入式的特点</strong>
+1：软硬件可剪裁
+2：功能，可靠，成本，体积，功耗严格
+<strong>二：嵌入式的历史</strong>
+1：SCM (Single Chip Microcomputer)
+2：MCU (micro Controller Unit)
+3：SoC (System on a Chip)
+<strong>三：ARM体系架构的版本</strong>
+1：ARMv4 只支持32位指令集
+2：ARMv4T 增加16位Thumb指令
+3：ARMv5TE 改进的Thumb指令 “增强型DSP指令”，简称‘E’指令
+4：ARMv5TEJ 增加了Java加速器Jazelle
+5：ARMv6 Thumb-2 TrusZone技术
+6：ARMv7 增加NEON技术
+<strong>四：ARM处理器系列：</strong>
+注意：
+T：支持Thunmb指令集
+D：内嵌Debug
+M：标示内嵌硬件乘法器(Multiplier)
+I：支持偏上断点和调试点
+E：支持增强型DSP功能
+J：表示支持Jazelle技术
+S：表示全合成式
+
+ARM7：低功耗32位RISC微处理器，成本功耗敏感，最高可达130MIPS，支持Thumb16位指令集和ARM32位指令集，ARM7TDMI，ARM7TDMI-S，ARM720T，ARMM7EJ-S，ARM7没有内存管理单元（MMU）
+
+ARM9：与ARM7比较，有MMU，Cache，最高可达300MIPS，ARM920T，ARM922T
+
+ARM9E：增强DSP，Java应用ARM926EJ-S，ARM946E-S，ARM966E-S，ARM968E-S，ARM996HS
+
+ARM10E：高性能，低功耗，浮点运算增强等 ARM1020E,  ARM1022E,  ARM1026EJ-S
+
+ARM11：,是ARMv6的第一代实现，适合无线和消费类电子，高吞吐量，ARM11 MPCore， ARM1136J(F)-S，ARM1156T2(F)-S，ARM1176(F)-S
+
+Cortex: ARMv7架构，Cortex-A，Cortex-R，Cortex-M
+
+SecurCore：安全性，32位的RISC技术 SecurCoreSC100， SecurCoreSC200
+
+OptimoDE Data Engines：高性能信号处理应用而设计
+
+<strong>选择linux嵌入式的理由</strong>
+VxWorks，Windows CE， UC/OS-II，Linux
+</pre>
+
