@@ -35,9 +35,8 @@
 			</div>
                                 {{ content }}
 			<ul class="chaos">
-				<li><a class="title" href="http://blog.chengyichao.info/2013/06/20/dreamsome">Dreamsome.org</a><span class="time">13-06-20</span></li>
                 {% for post in site.posts %} {% if post.layout == "default" %}
-                <li><a  title="{{ post.author }}" class="title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>  <span> {{ post.data | data_to_lang_string }} </span>   </li>
+                <li><a  title="{{ post.author }}" class="title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>  <span> {{ post.date | data_to_lang_string }} </span>   </li>
 				{% endif %} {% endfor %}
 			</ul>
 		</div>
