@@ -36,7 +36,7 @@
                                 {{ content }}
 			<ul class="chaos">
                 {% for post in site.posts %} {% if post.layout == "default" %}
-                <li><a  title="{{ post.author }}" class="title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>  <span class="time"> {{ post.date | date_to_long_string }} </span>   </li>
+                <li><a  title="{{ post.author }}" class="title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>  <span class="time"> {{ post.date | date_to_string }} </span>   </li>
 				{% endif %} {% endfor %}
 			</ul>
 		</div>
