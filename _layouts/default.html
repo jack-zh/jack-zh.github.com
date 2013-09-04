@@ -132,7 +132,7 @@ SyntaxHighlighter.all();
                                  {% for post in site.posts %} {% if post.layout == "default" %}
                                  <li>{{ post.date | date_to_long_string }} <a
                                      title="{{ post.author }}" class="{{ post.classification }}"
-                                     href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+                                     href="{{ site.baseurl }}{{ post.url }}">:{{ post.title }}</a></li>
                                  {% endif %} {% endfor %}
                              </ul>
                          </div>
@@ -340,11 +340,11 @@ $(window.parent.document).find("title").html($("title").html())
         author = $(this).find("a").attr("title")
         if (!(youf(authors,author))){
             authors.push(author)
-            authorNodes.push({open : false,name:author,children:[{name:titletext,url:hreftext}]})
+            authorNodes.push({open : false,name:author,children:[{name: titletext,url:hreftext}]})
             }else{
             for (i = 0; i<authors.length;i++){
                 if(author == authorNodes[i].name){
-                    authorNodes[i].children.push({name:titletext,url:hreftext})
+                    authorNodes[i].children.push({name: titletext,url:hreftext})
                 }
             }
         }
@@ -353,12 +353,11 @@ $(window.parent.document).find("title").html($("title").html())
         classification = $(this).find("a").attr("class")
         if (!(youf(lives,classification))){
             lives.push(classification)
-            liveNodes.push({open : false,name:classification,children:[{name:titletext,url:hreftext}]})
+            liveNodes.push({open : false,name:classification,children:[{name:datelist + ":" + titletext,url:hreftext}]})
             }else{
             for (i = 0; i<lives.length;i++){
                 if(classification == liveNodes[i].name){
-                    //liveNodes[i].children.push({name:datelist + ":" + titletext,url:hreftext})
-                    liveNodes[i].children.push({name:titletext,url:hreftext})
+                    liveNodes[i].children.push({name:datelist + ":" + titletext,url:hreftext})
                 }
             }
         }
@@ -384,12 +383,12 @@ $(window.parent.document).find("title").html($("title").html())
         arr = new Array(titletext, yeartext, monthtext, daytext, hreftext)
         if ((menode["children"])) {
             menode["children"][menode["children"].length] = {
-                name : titletext,
+                name : datelist + ":" + titletext,
                 url : hreftext
             }
             } else {
             menode["children"] = [ {
-                name : titletext,
+                name : datelist + ":" + titletext,
                 url : hreftext
             } ]
         }
