@@ -353,11 +353,11 @@ $(window.parent.document).find("title").html($("title").html())
         classification = $(this).find("a").attr("class")
         if (!(youf(lives,classification))){
             lives.push(classification)
-            liveNodes.push({open : false,name:classification,children:[{name:datelist + ":" + titletext,url:hreftext}]})
+            liveNodes.push({open : false,name:classification,children:[{name: titletext,url:hreftext}]})
             }else{
             for (i = 0; i<lives.length;i++){
                 if(classification == liveNodes[i].name){
-                    liveNodes[i].children.push({name:datelist + ":" + titletext,url:hreftext})
+                    liveNodes[i].children.push({name: titletext,url:hreftext})
                 }
             }
         }
