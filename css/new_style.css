@@ -1126,3 +1126,18 @@ pre .xml .cdata {
     margin-top: -50px;
     margin-right: 15px;
 }
+
+.preclass {
+    background-color: #0f4006;
+    font-family: 'Courier New', Courier, monospace;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    padding: 15px 10px;
+    padding-bottom: -20px;
+    border: 1px solid #eee;
+    word-wrap:break-word; /* Internet Explorer 5.5+ */
+    white-space: pre-wrap; /* Firefox */
+    font-size: 15px;
+    width: 100%;
+}
