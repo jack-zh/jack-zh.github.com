@@ -37,22 +37,19 @@ classification: Learn-C-从头开始
     @write系统调用原型
 </pre>
     <div class="highlight">
-    <pre><code>
-#include &lt;unistd.h&gt;
+    <pre><code>#include &lt;unistd.h&gt;
 size_t write(int fildes, const void *buf, size_t nbytes);<code></pre></div>
 <pre class="preclass">
     @read系统调用原型
 </pre>
     <div class="highlight">
-    <pre><code>
-#include &lt;unistd.h&gt;
+    <pre><code>#include &lt;unistd.h&gt;
 size_t read(int fildes, const void *buf, size_t nbytes);<code></pre></div>
 <pre class="preclass">
     @open系统调用原型
 </pre>
     <div class="highlight">
-    <pre><code>
-#include &lt;fcntl.h&gt;
+    <pre><code>#include &lt;fcntl.h&gt;
 #include &lt;sys/types.h&gt;
 #include &lt;sys/stat.h&gt;
 int open(const char* path, int oflags);
@@ -82,13 +79,11 @@ int open(const char* path, int oflags, mode_t mode);<code></pre></div>
     @close系统调用原型
   </pre>
     <div class="highlight">
-        <pre><code>
-#include &lt;fcntl.h&gt;
+        <pre><code>#include &lt;fcntl.h&gt;
 int close(int fildes);<code></pre></div>
 <pre class="preclass">
 	@ioctl系统调用原型
 </pre>
   <div class="highlight">
-        <pre><code>
-#include &lt;fcntl.h&gt;
+        <pre><code>#include &lt;fcntl.h&gt;
 int ioctl(int fildes, int cmd, ...);<code></pre></div>
