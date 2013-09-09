@@ -1112,3 +1112,13 @@ pre .xml .css,
 pre .xml .cdata {
   opacity: 0.5;
 }
+
+
+        .title_this{
+            font-size: 50px;
+            text-align: center;
+        }
+        .date_this{
+            font-size: 15px;
+            text-align: right;
+        }
