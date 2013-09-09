@@ -27,34 +27,42 @@ classification: Learn-C-从头开始
 <pre class="preclass">
     @系统调用的效率很低，因为要切换到内核代码。改善：少用or一次多用
     @系统调用的效率很低，因为硬件做了限制
-    <p class="addimg" id="linux/linux1.png"></p>
     @改善：提供了库函数
 </pre>
+<p class="addimg" id="linux/linux1.png"></p>
 
 <h2>底层文件访问</h2>
 <pre class="preclass">
     @文件描述符 0：标准输入 1：标准输出 2：错误输出
     @write系统调用原型
 </pre>
-    <div class="highlight">
+
+<div class="highlight">
     <pre><code>#include &lt;unistd.h&gt;
-size_t write(int fildes, const void *buf, size_t nbytes);<code></pre></div>
+size_t write(int fildes, const void *buf, size_t nbytes);</code></pre>
+</div>
+
 <pre class="preclass">
     @read系统调用原型
 </pre>
-    <div class="highlight">
+
+<div class="highlight">
     <pre><code>#include &lt;unistd.h&gt;
-size_t read(int fildes, const void *buf, size_t nbytes);<code></pre></div>
+size_t read(int fildes, const void *buf, size_t nbytes);</code></pre>
+</div>
+
 <pre class="preclass">
     @open系统调用原型
 </pre>
-    <div class="highlight">
+
+<div class="highlight">
     <pre><code>#include &lt;fcntl.h&gt;
 #include &lt;sys/types.h&gt;
 #include &lt;sys/stat.h&gt;
 int open(const char* path, int oflags);
-int open(const char* path, int oflags, mode_t mode);<code></pre></div>
-</pre>
+int open(const char* path, int oflags, mode_t mode);</code></pre>
+</div>
+
 <pre class="preclass">
         oflags: |实现
           O_RDONLY   只读
@@ -78,12 +86,17 @@ int open(const char* path, int oflags, mode_t mode);<code></pre></div>
         umask:user mask权限设置的东西
     @close系统调用原型
   </pre>
-    <div class="highlight">
+
+<div class="highlight">
         <pre><code>#include &lt;fcntl.h&gt;
-int close(int fildes);<code></pre></div>
+int close(int fildes);</code></pre>
+</div>
+
 <pre class="preclass">
 	@ioctl系统调用原型
 </pre>
-  <div class="highlight">
+
+<div class="highlight">
         <pre><code>#include &lt;fcntl.h&gt;
-int ioctl(int fildes, int cmd, ...);<code></pre></div>
+int ioctl(int fildes, int cmd, ...);</code></pre>
+</div>
