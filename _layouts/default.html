@@ -130,15 +130,10 @@ SyntaxHighlighter.all();
                          <div id="showlist">
                              <ul id="treeDemo" class="ztree overflows">
                                  {% for post in site.posts %} 
-
-                                 
+                             
                                  <li>{{ post.date | date_to_long_string }} 
                                     <a title="{{ post.author }}" class="{{ post.classification }}"
                                      href="{{ site.baseurl }}{{ post.url }}">:{{ post.title }}</a></li>
-                                 
-
-                                 
-                              
 
                                  {% endfor %}
                              </ul>
