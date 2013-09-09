@@ -129,7 +129,7 @@ SyntaxHighlighter.all();
                          <h2>最新文章</h2>
                          <div id="showlist">
                              <ul id="treeDemo" class="ztree overflows">
-                                 {% for post in site.posts %} {% if post.layout == "default" %}
+                                 {% for post in site.posts %} {% if post.layout == "default" or post.layout == "new_default"%}
                                  <li>{{ post.date | date_to_long_string }} <a
                                      title="{{ post.author }}" class="{{ post.classification }}"
                                      href="{{ site.baseurl }}{{ post.url }}">:{{ post.title }}</a></li>
