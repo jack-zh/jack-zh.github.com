@@ -36,9 +36,9 @@
 			</div>
                                 {{ content }}
 			<ul class="chaos">
-                {% for post in site.posts %} {% if post.layout == "default" %}
+                {% for post in site.posts %}
                 <li><a  title="{{ post.author }}" class="title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>  <span class="time"> {{ post.date | date_to_string }} </span>   </li>
-				{% endif %} {% endfor %}
+				{% endfor %}
 			</ul>
 		</div>
 	</body>
