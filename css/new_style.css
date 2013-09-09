@@ -1133,16 +1133,17 @@ pre .xml .cdata {
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
     border-radius: 7px;
-    padding: 15px 10px;
-    padding-bottom: -20px;
     border: 1px solid #eee;
     word-wrap:break-word; /* Internet Explorer 5.5+ */
     white-space: pre-wrap; /* Firefox */
     font-size: 15px;
     width: 100%;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
-
 img{
     max-width: 100%;
     max-height: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
